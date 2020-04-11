@@ -3,7 +3,7 @@
 {% block subtitle %}{{ _('Register') }}{% endblock %}
 
 {% block breadcrumb_content %}
-  <li class="active">{{ h.nav_link(_('Registration'), controller='user', action='register') }}</li>
+  <li class="active">{{ h.nav_link(_('Registration'), named_route='user.register') }}</li>
 {% endblock %}
 
 {% block primary_content %}
@@ -13,7 +13,7 @@
       <h1 class="page-heading">
         {% block page_heading %}{{ _('Register for an Account') }}{% endblock %}
       </h1>
-      {{ c.form | safe }}
+      {{ form | safe }}
       {% endblock %}
     </div>
   </article>
@@ -25,27 +25,9 @@
     {% block help_inner %}
     <h2 class="module-heading">{{ _('Why Sign Up?') }}</h2>
     <div class="module-content">
-      <p>{% trans %}The best way to publish datasets, use data APIs and analyze datasets through visualization.{% endtrans %}</p>
+      <p>{% trans %}Create datasets, groups and other exciting things{% endtrans %}</p>
     </div>
     {% endblock %}
   </section>
   {% endblock %}
-
-
-      {% block help_login %}
-  <section class="module module-narrow module-shallow">
-    {% block help_login_inner %}
-      <h2 class="module-heading">{{ _('Already Have an Account?') }}</h2>
-      <div class="module-content">
-        <p>{% trans %}Enter your login credentials and start pushing data. {% endtrans %}</p>
-        <p class="action">
-        {% block help_login_button %}
-          <a class="btn" href="{{ h.url_for(controller='user', action='login') }}">{{ _('Login Here') }}</a>
-        {% endblock %}
-        </p>
-      </div>
-    {% endblock %}
-      {% endblock %}
-
 {% endblock %}
-

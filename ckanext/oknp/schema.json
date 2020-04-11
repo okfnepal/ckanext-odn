@@ -28,68 +28,64 @@
       "label": "Data Catagory",
       "choices": [
           {
-              "value": "agriculture",
+              "value": "Agriculture",
               "label": "Agriculture"
           },
           {
-              "value": "education",
+              "value": "Education",
               "label": "Education"
           },
           {
-              "value": "finance",
+              "value": "Finance",
               "label": "Finance"
           },
           {
-              "value": "health",
+              "value": "Health",
               "label": "Health"
           },
           {
-              "value": "legislative",
+              "value": "Legislative",
               "label": "Legislative"
           },
           {
-              "value": "travel tourism",
+              "value": "Travel & Tourism",
               "label": "Travel & Tourism"
           },
           {
-              "value": "aid data",
+              "value": "Aid Data",
               "label": "Aid Data"
           },
           {
-              "value": "census",
+              "value": "Census",
               "label": "Census"
           },
           {
-              "value": "development data",
+              "value": "Development Data",
               "label": "Development Data"
           },
           {
-              "value": "geo data",
+              "value": "Geo Data",
               "label": "Geo Data"
           },
           {
-              "value": "energy water resources",
+              "value": "Energy & Water Resources",
               "label": "Energy & Water Resources"
           },
           {
-              "value": "government administration",
+              "value": "Government & Administration",
               "label": "Government & Administration"
           },
           {
-              "value": "transportation",
+              "value": "Transportation",
               "label": "Transportation"
           },
           {
-              "value": "election",
-              "label": "Agriculture"
+              "value": "Election",
+              "label": "Election"
           },
           {
-              "value": "environment climate",
+              "value": "Environment & Climate",
               "label": "Environment & Climate"
-          },
-          {
-              "value": "industrvalue",
-              "label": "Industrvalue"
           }
       ]
     },
@@ -165,15 +161,15 @@
     },
     {
       "preset": "select",
-      "field_name": "category",
-      "label": "Data Catagory",
+      "field_name": "language",
+      "label": "Language",
       "choices": [
         {
-          "value": "english",
+          "value": "English",
           "label": "English"
         },
         {
-          "value": "nepali",
+          "value": "Nepali",
           "label": "Nepali"
         }
       ]

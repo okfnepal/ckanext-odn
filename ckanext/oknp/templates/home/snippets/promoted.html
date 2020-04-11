@@ -1,12 +1,11 @@
 {% set intro = g.site_intro_text %}
-    {% if intro %}
-      {{ h.render_markdown(intro) }}
-    {% else %}
-     <h1 class="editContent">{{ _("Welcome to Open Data Nepal") }}</h1>
-      <p class="editContent">
-        {% trans %}
+{% if intro %}
+{{ h.render_markdown(intro) }}
+{% else %}
+<h1 class="editContent">{{ _("Welcome to Open Data Nepal") }}</h1>
+<p class="editContent">
+  {% trans %}
 A civil society initiative to make Nepal’s data accessible online perpetually. The portal allows users to publish, explore, download and use data to make their own visualisations, apps and services without any restriction.
-        {% endtrans %}
-      </p>
-    {% endif %}
-  
+  {% endtrans %}
+</p>
+{% endif %}

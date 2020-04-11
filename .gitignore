@@ -45,4 +45,6 @@ docs/_build/
 .sass-cache
 ckanext/oknp/.DS_Store
 package-lock.json
-.DS_Store
+*.DS_Store
+ckanext/oknp/templates/.DS_Store
+ckanext/oknp/templates/.DS_Store
