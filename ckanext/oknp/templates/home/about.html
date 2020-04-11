@@ -1,0 +1,29 @@
+{% extends "page.html" %}
+{% block meta %}
+      {{ super() }}
+      <meta name="description" value="The datasets published at Open Data Nepal portal are harvested from different public agencies working under the government of Nepal. You can find the list of all official data sources from the Organization tab" />
+    {% endblock %}
+   
+
+{% block subtitle %}{{ _('About us') }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active">{% link_for _('About'), controller='home', action='about' %}</li>
+{% endblock %}
+
+{% block primary %}
+  <article class="module">
+    <div class="module-content">
+      {% block about %}
+        {% if g.site_about %}
+          {{ h.render_markdown(g.site_about) }}
+        {% else %}
+          <h1 class="page-heading">{{ _('About') }}</h1>
+          {% snippet 'home/snippets/about_text.html' %}
+        {% endif %}
+      {% endblock %}
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary %}{% endblock %}

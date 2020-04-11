@@ -1,0 +1,171 @@
+
+@import "variables.less";
+@import "custom.less";
+@import "snippet.less";
+@import "mixins.less";
+@import "module.less";
+@import "media.less";
+@import "nav.less";
+@import "forms.less";
+@import "dataset.less";
+@import "search.less";
+@import "group.less";
+@import "toolbar.less";
+@import "prose.less";
+@import "icons.less";
+@import "layout.less";
+@import "homepage.less";
+@import "masthead.less";
+@import "footer.less";
+@import "tables.less";
+@import "profile.less";
+@import "activity.less";
+@import "dropdown.less";
+@import "dashboard.less";
+@import "resource-view.less";
+@import "datapusher.less";
+@import "alerts.less";
+@import "input-groups.less";
+body {
+    // Using the masthead/footer gradient prevents the color from changing
+    // at the bottom of the window on pages with little content.
+    background: @WhiteColor ;
+}
+
+[hidden] {
+    display: none;
+}
+
+table {
+    table-layout: fixed;
+}
+
+thead th {
+    vertical-align: top;
+}
+
+td,
+th {
+    word-wrap: break-word;
+}
+
+table .metric {
+    width: 140px;
+}
+
+code {
+    color: @codeTextColor;
+    border: none;
+    background: none;
+    white-space: normal;
+}
+
+pre {
+    border: none;
+    background: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+mark {
+    background: @highlightBackground;
+}
+
+blockquote p {
+    font-size: 1em;
+}
+
+iframe {
+    border: none;
+}
+
+.embedded-content h1 {
+    font-size: 1.4em;
+}
+
+.embedded-content h2 {
+    font-size: 1.4em;
+}
+
+.embedded-content h3 {
+    font-size: 1.2em;
+}
+
+.popular {
+    text-indent: -999em;
+}
+
+.empty {
+    color: @emptyTextColor;
+    font-style: italic;
+}
+
+.page-heading {
+    margin-top: 0;
+    margin-bottom: @grid-gutter-width/2;
+
+        &:after{
+            content: "";
+            display: block;
+            height: 2px;
+            width: 100%;
+            background-image: linear-gradient(-90deg, #00d2ff 0%, #3a7bd5 100%);
+            position: absolute;
+            margin-left: -30px;
+            left: 50px;
+            top: 80px;
+        }
+
+
+
+}
+
+.m-top {
+    margin-top: @gutterSmallX;
+}
+
+.m-left {
+    margin-left: @gutterSmallX;
+}
+
+.m-right {
+    margin-right: @gutterSmallX;
+}
+
+.m-bottom {
+    margin-bottom: @gutterSmallX;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.reduced-margin {
+    margin: 3px 5px;
+}
+
+.p-top {
+    padding-top: @gutterSmallX;
+}
+
+.p-left {
+    padding-left: @gutterSmallX;
+}
+
+.p-right {
+    padding-right: @gutterSmallX;
+}
+
+.p-bottom {
+    padding-bottom: @gutterSmallX;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.reduced-padding {
+    padding: 3px 5px;
+}
+
+// @import "iehacks.less";

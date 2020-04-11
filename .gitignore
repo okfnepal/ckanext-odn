@@ -43,3 +43,6 @@ docs/_build/
 
 # Sass
 .sass-cache
+ckanext/oknp/.DS_Store
+package-lock.json
+.DS_Store

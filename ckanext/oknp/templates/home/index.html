@@ -1,0 +1,25 @@
+{% extends "page.html" %}
+{% set homepage_style = ( g.homepage_style or '1' ) %}
+
+{% block subtitle %}{{ _("") }}{% endblock %}
+{% block meta %}
+      {{ super() }}
+      <meta name="description" content ="Open Data Nepal is a comprehensive open data portal which shares different kinds of data related to Nepal in open format and fulfills the increasing public demand to make government transparent and accountable."/>
+      <meta name="keywords" content="Open Data Nepal, Nepal in Data, Data Portal, Data Nepal, Development Data, Sustainable Development in Nepal, Open Data, Open Format, Open Nepal, Nepal at a Glance,Statistics in Nepal ">
+      <meta name="abstract" content="A comprehensive open data portal to make Nepal’s data accessible online perpetually. Publish, explore, download and use data to make own visualizations, apps and services without any restriction.">
+  {% endblock %}
+
+
+{% block maintag %}{% endblock %}
+{% block toolbar %}{% endblock %}
+
+{% block content %}
+  <div class="homepage layout-{{ homepage_style }}">
+    <div class="container">
+      {{ self.flash() }}
+    </div>
+    {% block primary_content %}
+      {% snippet "home/layout{0}.html".format(homepage_style) %}
+    {% endblock %}
+  </div>
+{% endblock %}

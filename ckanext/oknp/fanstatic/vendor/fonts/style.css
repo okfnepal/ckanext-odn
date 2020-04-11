@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?7zu4fr');
+  src:  url('fonts/icomoon.eot?7zu4fr#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?7zu4fr') format('truetype'),
+    url('fonts/icomoon.woff?7zu4fr') format('woff'),
+    url('fonts/icomoon.svg?7zu4fr#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  text-align: center !important;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+width: 100% !important;
+}
+
+.icon-health:before {
+  content: "\e900";
+}
+.icon-aid:before {
+  content: "\e901";
+}
+.icon-development:before {
+  content: "\e902";
+}
+.icon-agriculture:before {
+  content: "\e903";
+}
+.icon-energy:before {
+  content: "\e904";
+}
+.icon-travel-tourism:before {
+  content: "\e905";
+}
+.icon-finance:before {
+  content: "\e906";
+}
+.icon-government:before {
+  content: "\e907";
+}
+.icon-legalisation:before {
+  content: "\e908";
+}
+.icon-census:before {
+  content: "\e909";
+}
+.icon-education:before {
+  content: "\e90a";
+}
+.icon-geo:before {
+  content: "\e90b";
+}
