@@ -16,6 +16,6 @@ deploy_staging:
   script:
     - |
         ssh "$HOST"  /bin/bash -s << EOT  
-        bash /home/oknp-odnp/ckan/lib/default/src/start.sh
+        bash "$SCRIPT"
   only:
     - master
