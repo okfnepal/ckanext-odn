@@ -14,7 +14,8 @@ deploy_staging:
     name: staging
     url: "$HOST"
   script:
-    - |ssh "$HOST" "cd /var/www/  \ &&
-    sudo mkdir testdep"
+    - | ssh "$HOST"  /bin/bash -s << EOT  
+        cd /var/www/  \ &&
+        sudo mkdir testdep
   only:
     - master
