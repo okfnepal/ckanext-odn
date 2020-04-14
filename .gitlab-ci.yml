@@ -16,7 +16,7 @@ deploy_staging:
   script:
     - |
         ssh "$HOST"  /bin/bash -s << EOT  
-        cd /var/www/
-        sudo mkdir testdep
+        cd "$SCRIPT_PATH"
+        bash start.sh
   only:
     - master
