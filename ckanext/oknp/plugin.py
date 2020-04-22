@@ -1,11 +1,21 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 from ckan.model import Session, Package, Revision
+import ckanext.oknp.helpers as h
+import ckanext.oknp.auth as auth
+import logging
 
+_ = toolkit._ 
 
 class OknpPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers, inherit=True)
+    plugins.implements(plugins.IFacets)
+    plugins.implements(plugins.IGroupController)
+    plugins.implements(plugins.IRoutes, inherit=True)
+    plugins.implements(plugins.IAuthFunctions)
+
+
 
 
     # IConfigurer
@@ -13,26 +23,43 @@ class OknpPlugin(plugins.SingletonPlugin):
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('fanstatic', 'oknp')
-    
-    def recent_data(self):
-        """
-        Most recent datasets, based on the metadata_modified attr.
-        Return HTML that can be rendered in the templates calling
-        {{ h.most_recent() }}
-        """
-        packages = []
-        for package in Session.query(Package).filter(Package.state == 'active',
-                Package.private == False).order_by(
-                Package.metadata_modified.desc()).limit(4):
-            packages.append(package.as_dict())
-        data = {'packages': packages, 'list_class': "unstyled dataset-list",
-            'item_class': "dataset-item module-content", 'truncate': 120,
-            'hide_resources': False}
-        return toolkit.render_snippet('snippets/package_list.html',
-        data)
 
+    # IFacets   
+    def _facets(self, facets_dict):
+        if 'groups' in facets_dict:
+            del facets_dict['groups']
+        return facets_dict
+
+    def dataset_facets(self, facets_dict, package_type):
+        return self._facets(facets_dict)
+
+    def group_facets(self, facets_dict, group_type, package_type):
+        return self._facets(facets_dict)
+
+    def organization_facets(self, facets_dict, organization_type,
+            package_type):
+        return self._facets(facets_dict)
+
+    # IGroupController 
+    def before_view(self, pkg_dict):
+        plugins.toolkit.abort(404, _('Page not found'))
+        
     # ITemplateHelpers
     def get_helpers(self):
         return {
-                'recent_data': self.recent_data,
+                'recent_data': h.recent_data,
+                'build_nav_main': h.main_nav
             }
+
+    ## IRoutes
+    def before_map(self, map):
+
+        # Add controller for KE EMu specimen records
+        map.connect('suggestion_form', '/suggest-dataset',
+                    controller='ckanext.oknp.controllers.suggestion:SuggestionController',
+                    action='form')
+        return map
+    
+    def get_auth_functions(self):
+        return {'send_sugesstion': auth.send_sugesstion}
+
