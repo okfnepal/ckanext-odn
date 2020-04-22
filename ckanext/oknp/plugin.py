@@ -32,9 +32,6 @@ class OknpPlugin(plugins.SingletonPlugin):
     def dataset_facets(self, facets_dict, package_type):
         return self._facets(facets_dict)
 
-    def group_facets(self, facets_dict, group_type, package_type):
-        return self._facets(facets_dict)
-
     def organization_facets(self, facets_dict, organization_type,
             package_type):
         return self._facets(facets_dict)
