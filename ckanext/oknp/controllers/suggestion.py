@@ -100,7 +100,7 @@ class SuggestionController(base.BaseController):
                 
         return data_dict, errors, error_summary
 
-    def form(self):
+    def post(self):
 
         data = {}
         errors = {}
