@@ -1,0 +1,34 @@
+{% extends "page.html" %}
+{% block subtitle %}{{ _('Suggest') }}{% endblock %}
+
+{% block breadcrumb_content %}
+    {{ super() }}
+  <li><a href="{{ h.url_for('contact_form') }}">Suggest Dataset </a></li>
+{% endblock %}
+
+{% block primary_content %}
+  <article class="module">
+    <div class="module-content">
+      <h1 class="page-heading">Suggest Dataset</h1>
+
+        {% block contact_form_content %}
+            {% include "suggestion/snippets/form.html" %}
+        {% endblock %}
+
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary_content %}
+<div class="module module-narrow module-shallow">
+  <h2 class="module-heading">
+    {{ _('Suggest Dataset') }}
+  </h2>
+  <div class="module-content">
+    <p>
+      Please feel free to suggest data sources which aren’t currently linked to the portal.
+
+    </p>
+  </div>
+</div>
+{% endblock %}

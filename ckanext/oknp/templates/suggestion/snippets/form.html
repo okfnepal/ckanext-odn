@@ -1,0 +1,39 @@
+{% import 'macros/form.html' as form %}
+
+{% block contact_form %}
+
+    <form class="contact-form form-horizontal" method="post">
+      {{ form.errors(error_summary) }}
+      <fieldset>
+
+        {% block contact_form_fields %}
+
+            {{ form.input('name', label=_('Full Name'), id='field-name',  value=data.name, error=errors.name, classes=['control-medium'], placeholder=_('Type your name'), is_required=true) }}
+
+
+            {{ form.input('organzation', label=_('Organization'), id='field-organzation', type='text', value=data.organzation, error=errors.organzation, classes=['control-medium'], placeholder=_('Your Organization Name'), is_required=true) }}
+
+            {{ form.input('email', label=_('Email'), id='field-email', type='email', value=data.email, error=errors.email, placeholder=_('Your email addresss'), classes=['control-medium'], is_required=true) }}
+
+            {{ form.input('dataset_title', label=_('Dataset Title'), id='field-dataset_title', type='text', value=data.dataset_title, error=errors.dataset_title, classes=['control-medium'], placeholder=_('Eg. Population by second language, sex and age groups (2011-17)'), is_required=true) }}
+
+            {{ form.input('dataset_owner', label=_('Dataset Owner'), id='field-dataset_owner', type='text', value=data.dataset_owner, error=errors.dataset_owner, classes=['control-medium'],placeholder=_('Central Bureau of Statistics'),  is_required=true) }}
+
+            {{ form.input('url', label=_('URL'), id='field-url', type='text', value=data.url, error=errors.url, classes=['control-medium'], placeholder=_('http://cbs.gov.np/publications/data.csv'),  is_required=true) }}
+
+            {{ form.markdown('content', label=_('Description'), id='field-content', value=data.content, error=errors.content, placeholder=_('Tell us something about dataset. ')) }}
+
+        {% endblock %}
+
+      {% if g.recaptcha_publickey %}
+        {% snippet "user/snippets/recaptcha.html", public_key=g.recaptcha_publickey %}
+      {% endif %}
+
+      </fieldset>
+
+      <div class="form-actions">
+        <button class="btn btn-primary save" type="submit" name="save">{{ _('Submit') }}</button>
+      </div>
+    </form>
+
+{% endblock %}
