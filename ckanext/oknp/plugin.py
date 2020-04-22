@@ -17,8 +17,6 @@ class OknpPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IAuthFunctions)
 
 
-
-
     # IConfigurer
     def update_config(self, config_):
         toolkit.add_template_directory(config_, 'templates')
