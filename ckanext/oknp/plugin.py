@@ -1,9 +1,10 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 from ckan.model import Session, Package, Revision
+import logging
+
 import ckanext.oknp.helpers as h
 import ckanext.oknp.auth as auth
-import logging
 
 _ = toolkit._ 
 
@@ -54,10 +55,19 @@ class OknpPlugin(plugins.SingletonPlugin):
     ## IRoutes
     def before_map(self, map):
 
-        # Add controller for KE EMu specimen records
         map.connect('suggestion_form', '/suggest-dataset',
                     controller='ckanext.oknp.controllers.suggestion:SuggestionController',
-                    action='form')
+                    action='post')
+                    
+        map.connect('FaqController', '/faq',
+                    controller='ckanext.oknp.controllers.page:FaqController',
+                    action='get')
+
+        map.connect('page', '/terms-condition',
+                    controller='ckanext.oknp.controllers.page:ConditionPageController',
+                    action='get')
+
+
         return map
     
     def get_auth_functions(self):
