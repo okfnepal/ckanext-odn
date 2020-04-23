@@ -21,7 +21,7 @@ class OknpPlugin(plugins.SingletonPlugin):
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('fanstatic', 'oknp')
 
-        
+
     # ITemplateHelpers
     def get_helpers(self):
         return {
