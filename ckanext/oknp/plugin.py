@@ -11,7 +11,6 @@ _ = toolkit._
 class OknpPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers, inherit=True)
-    plugins.implements(plugins.IGroupController)
     plugins.implements(plugins.IRoutes, inherit=True)
     plugins.implements(plugins.IAuthFunctions)
 
@@ -22,9 +21,6 @@ class OknpPlugin(plugins.SingletonPlugin):
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('fanstatic', 'oknp')
 
-    # IGroupController 
-    def before_view(self, pkg_dict):
-        plugins.toolkit.abort(404, _('Page not found'))
         
     # ITemplateHelpers
     def get_helpers(self):
