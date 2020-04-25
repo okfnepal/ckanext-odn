@@ -13,11 +13,7 @@ class OknpPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.ITemplateHelpers, inherit=True)
     plugins.implements(plugins.IRoutes, inherit=True)
     plugins.implements(plugins.IAuthFunctions)
-    plugins.implements(plugins.IGroupController)
     plugins.implements(plugins.IFacets)
-
-
-
 
     # IConfigurer
     def update_config(self, config_):
@@ -25,13 +21,6 @@ class OknpPlugin(plugins.SingletonPlugin):
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('fanstatic', 'oknp')
 
-
-    # IGroupController 
-    def before_view(self, pkg_dict):
-        plugins.toolkit.abort(404, _('Page not found'))
-
-
-    # IFacets   
     def _facets(self, facets_dict):
         if 'groups' in facets_dict:
             del facets_dict['groups']
@@ -66,6 +55,10 @@ class OknpPlugin(plugins.SingletonPlugin):
         map.connect('page', '/terms-condition',
                     controller='ckanext.oknp.controllers.page:ConditionPageController',
                     action='get')
+
+        map.connect('group', '/group',
+                    controller='ckanext.oknp.controllers.page:Group',
+                    action='redirect')
 
         return map
     
