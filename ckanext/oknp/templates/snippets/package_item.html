@@ -73,6 +73,20 @@ Example:
                   <a href="{{ h.url_for(controller='package', action='read', id=package.name) }}" class="label label-default" data-format="{{ resource.lower() }}">{{ resource | capitalize}}</a>&nbsp;
                 </li>
                 {% endfor %}
+                {% if package.category %}
+                <li class="catagory-tag">
+                  <a href="dataset?category={{package['category']}}" class="label label-default catagory-label" data-catagory="{{ package['category'] }}">{{ package['category'] }}</a>
+                </li>
+                {% endif %}
+
+                {% if package.extras %}
+                  {% if package.extras.category %}
+                  <li class="catagory-home">
+                    <a href="dataset?category={{package.extras['category']}}" class="label label-default catagory-label" data-catagory="{{ package.extras['category'] }}">{{ package.extras['category'] }}</a>
+                  </li>
+                  {% endif %}
+                {% endif %}
+
               {% endblock %}
             </ul>
           {% endblock %}
