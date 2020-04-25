@@ -1,6 +1,10 @@
 from ckan.model import Session, Package, Revision
 import ckan.plugins.toolkit as toolkit
 import ckan.lib.helpers as h
+import ckan.model as model
+from six import text_type
+
+import logging
 
 
 def recent_data():
@@ -29,3 +33,9 @@ def main_nav(*args):
     # TODO - Add realtime navigation
 
     return output
+
+def user_counter():
+    user_count = model.Session.query(model.User).count()
+    return user_count
+
+

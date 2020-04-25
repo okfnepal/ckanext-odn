@@ -40,7 +40,8 @@ class OknpPlugin(plugins.SingletonPlugin):
     def get_helpers(self):
         return {
                 'recent_data': h.recent_data,
-                'build_nav_main': h.main_nav
+                'build_nav_main': h.main_nav,
+                'user_coutner': h.user_counter()
             }
 
     ## IRoutes
