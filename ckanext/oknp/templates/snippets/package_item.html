@@ -68,17 +68,11 @@ Example:
                   <a href="{{ h.url_for(controller='package', action='read', id=package.name) }}" class="label label-default" data-format="{{ resource.lower() }}">{{ resource }}</a>
                 </li>
                 {% endfor %}
-
                 {% for resource in h.dict_list_reduce(package.resources, 'language') %}
                 <li class="resource-language">
                   <a href="{{ h.url_for(controller='package', action='read', id=package.name) }}" class="label label-default" data-format="{{ resource.lower() }}">{{ resource | capitalize}}</a>&nbsp;
                 </li>
                 {% endfor %}
-                {% if package.extras.category %}
-                <li class="catagory-tag">
-                  <a href="dataset?oknp_category_label={{package.extras['category']}}" class="label label-default" data-format="{{ package.extras['category'] }}">{{ package.extras['category'] }}</a>
-                </li>
-                {% endif %}
               {% endblock %}
             </ul>
           {% endblock %}
