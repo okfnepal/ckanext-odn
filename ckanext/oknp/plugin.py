@@ -22,6 +22,8 @@ class OknpPlugin(plugins.SingletonPlugin):
         toolkit.add_resource('fanstatic', 'oknp')
 
     def _facets(self, facets_dict):
+        if 'category' not in facets_dict:
+            facets_dict['category'] = plugins.toolkit._('Categories')
         if 'groups' in facets_dict:
             del facets_dict['groups']
         return facets_dict
