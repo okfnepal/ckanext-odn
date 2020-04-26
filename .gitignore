@@ -48,3 +48,4 @@ package-lock.json
 *.DS_Store
 ckanext/oknp/templates/.DS_Store
 ckanext/oknp/templates/.DS_Store
+.vscode/settings.json
