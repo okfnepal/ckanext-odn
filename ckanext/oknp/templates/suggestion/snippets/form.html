@@ -21,7 +21,7 @@
 
             {{ form.input('url', label=_('URL'), id='field-url', type='text', value=data.url, error=errors.url, classes=['control-medium'], placeholder=_('http://cbs.gov.np/publications/data.csv'),  is_required=true) }}
 
-            {{ form.markdown('content', label=_('Description'), id='field-content', value=data.content, error=errors.content, placeholder=_('Tell us something about dataset. ')) }}
+            {{ form.markdown('content', label=_('Description'), id='field-content', value=data.content, error=errors.content, classes=['control-medium'], placeholder=_('Tell us something about dataset. ')) }}
 
         {% endblock %}
 
@@ -31,8 +31,8 @@
 
       </fieldset>
 
-      <div class="form-actions">
-        <button class="btn btn-primary save" type="submit" name="save">{{ _('Submit') }}</button>
+      <div class="form-actions form-group control-medium">
+        <button class="btn btn-primary save form-control" type="submit" name="save">{{ _('Submit') }}</button>
       </div>
     </form>
 

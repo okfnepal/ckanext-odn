@@ -137,7 +137,7 @@ select{
 
 .control-medium {
     @media (min-width: @screen-md-min) {
-        width: calc(~"50% - " @grid-gutter-width/2);
+        width: calc(~"80% - " @grid-gutter-width/2);
     }
 }
 
@@ -706,11 +706,13 @@ input[data-module="autocomplete"] {
 }
 
 .select2-container {
+    padding: 0;
     margin-top: 1px;
 }
 
 .select2-container-multi {
     margin-top: 0;
+    padding: 0;
 }
 
 .select2-container-multi .select2-choices .select2-search-choice {
