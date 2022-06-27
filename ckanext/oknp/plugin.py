@@ -41,7 +41,6 @@ class OknpPlugin(plugins.SingletonPlugin):
         return {
                 'recent_data': h.recent_data,
                 'build_nav_main': h.main_nav,
-                'user_coutner': h.user_counter()
             }
 
     ## IRoutes
