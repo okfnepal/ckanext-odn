@@ -34,8 +34,4 @@ def main_nav(*args):
 
     return output
 
-def user_counter():
-    user_count = model.Session.query(model.User).count()
-    return user_count
-
 
