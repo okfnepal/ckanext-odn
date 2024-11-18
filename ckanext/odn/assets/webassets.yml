@@ -1,0 +1,14 @@
+# odn-js:
+#   filter: rjsmin
+#   output: ckanext-odn/%(version)s-odn.js
+#   contents:
+#     - js/odn.js
+#   extra:
+#     preload:
+#       - base/main
+
+# odn-css:
+#   filter: cssrewrite
+#   output: ckanext-odn/%(version)s-odn.css
+#   contents:
+#     - css/odn.css
